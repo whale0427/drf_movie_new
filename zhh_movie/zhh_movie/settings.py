@@ -39,6 +39,8 @@ if CSRF_TRUSTED_ORIGINS == ['']:
 
 SESSION_COOKIE_SECURE=os.getenv("SESSION_COOKIE_SECURE")=="True"
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # Application definition
 
 INSTALLED_APPS = [
