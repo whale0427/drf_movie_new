@@ -1,0 +1,117 @@
+# .gitignore 规则	匹配效果
+# *.pyc	只匹配当前目录下的 .pyc 编译文件
+# **/*.pyc	匹配所有目录（包括子目录）下的 .pyc 文件
+# venv/	只匹配当前目录下的 venv 文件夹
+# **/venv/	匹配任意层级的 venv 文件夹（比如 app/venv/、venv/）
+# docs/*.md	只匹配 docs/ 目录下的 .md 文件（不匹配 docs/sub/*.md）
+# docs/**/*.md	匹配 docs/ 下所有层级的 .md 文件
+# ====================== 1. Python虚拟环境 ======================
+.venv/
+venv/
+env/
+ENV/
+
+# ====================== 2. Python编译文件 ======================
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+*.egg
+
+# ====================== 3. Django相关 ======================
+*.db
+*.sqlite3
+*.sqlite3-journal
+# 数据库文件
+*.db3
+# 媒体文件
+**/media/
+# 静态文件（如果是收集的静态文件）
+# **/static/
+# 环境变量文件
+**/.env
+**/.env.local
+**/.env.*.local
+# 日志文件
+*.log
+# Django本地设置
+zhh_movie/local_settings.py
+#追加内容
+zhh_movie/.env
+zhh_movie/locale/*.mo
+
+# ====================== 4. 前端相关(直接版） ======================
+# 依赖文件
+# package-lock.json
+# package.json
+# yarn.lock
+#frontend/dist
+#不知道怎么备注;package-lock.json可以选择传；package.json必须传，其他人克隆后可以 npm install 安装依赖
+frontend/*
+frontend/!dist/
+frontend/!package.json
+frontend/!package-lock.json
+
+# ====================== 4.1. 前端相关（精细版） ======================
+# npm/yarn缓存
+frontend/.npm
+frontend/.yarn
+frontend/.yarn-cache
+# 编译输出
+*.js.map
+*.css.map
+*.ts.map
+# 缓存目录
+frontend/.cache/
+frontend/.temp/
+frontend/.tmp/
+# Logs
+frontend/logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/lerna-debug.log*
+frontend/node_modules
+frontend/.DS_Store
+frontend/dist-ssr
+frontend/coverage
+*.local
+# Editor directories and files
+frontend/.vscode/
+frontend/.vscode/*
+frontend/!.vscode/extensions.json
+frontend/.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.tsbuildinfo
+frontend/.eslintcache
+# Cypress
+frontend/cypress/videos/
+frontend/cypress/screenshots/
+# Vitest
+frontend/.vite
+frontend/__screenshots__/
+
+# ====================== 5. IDE/编辑器 ======================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
