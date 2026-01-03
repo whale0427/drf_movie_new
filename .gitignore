@@ -61,9 +61,9 @@ zhh_movie/locale/*.mo
 #不知道怎么备注;package-lock.json可以选择传；package.json必须传，其他人克隆后可以 npm install 安装依赖
 frontend/**
 !frontend/
-!frontend/dist/          # 保留dist目录（自动包含其下所有内容，无需加/**）
-!frontend/package.json   # 保留包管理核心文件
-!frontend/package-lock.json  # npm锁文件（pnpm替换为pnpm-lock.yaml）
+!frontend/dist/
+!frontend/package.json
+!frontend/package-lock.json
 
 # ====================== 4.1. 前端相关（精细版） ======================
 # npm/yarn缓存
