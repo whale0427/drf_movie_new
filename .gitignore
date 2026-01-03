@@ -59,10 +59,8 @@ zhh_movie/locale/*.mo
 # yarn.lock
 #frontend/dist
 #不知道怎么备注;package-lock.json可以选择传；package.json必须传，其他人克隆后可以 npm install 安装依赖
-frontend/**
-!frontend/
+frontend/*
 !frontend/dist/
-!frontend/dist/**
 !frontend/package.json
 !frontend/package-lock.json
 
