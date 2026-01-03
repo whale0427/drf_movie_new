@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 if ALLOWED_HOSTS == ['']:
@@ -141,10 +141,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATIC_URL= "/static/"
-# STATICFILES_DIRS=[
-#     BASE_DIR / "static",
-# ]
+
+STATICFILES_DIRS=[
+    "/www/wwwroot/drf_movie_new/frontend/dist/"
+]
+#静态文件收集目录
+STATIC_ROOT=Path(BASE_DIR).joinpath("collected_static")
+
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 32,
